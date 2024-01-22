@@ -34,13 +34,13 @@ function App() {
             <div className="w-full min-w-[300px] h-screen bg-[#275284] flex flex-col gap-4 justify-center items-center">
               <img
                 alt="site-logo"
-                src="../src/assets/jst-logo-blue.webp"
+                src="/jst-logo-blue.webp"
                 className="bg-white p-2 rounded-md"
               />
               <section className="flex justify-evenly w-60 bg-white text-black rounded-sm">
                 <img
                   alt="google-logo"
-                  src="../src/assets/images.jpeg"
+                  src="/images.jpeg"
                   className="w-10"
                 />
                 <Login />

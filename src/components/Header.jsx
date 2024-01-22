@@ -6,7 +6,7 @@ function Header() {
     <header className="bg-[#275284] min-w-[350px] w-full h-20 flex items-center justify-between px-2 sm:px-10">
       <img
         alt="site-logo"
-        src="../src/assets/jst-logo-blue.webp"
+        src="/jst-logo-blue.webp"
         className="bg-white p-2 rounded-md w-20 sm:w-36"
       />
 
