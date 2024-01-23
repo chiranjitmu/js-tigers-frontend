@@ -77,8 +77,8 @@ function List() {
   };
 
   return (
-    <main className="min-w-[320px] mx-2 overflow-x-auto sm:overflow-hidden">
-      <section>
+    <main className="min-w-[320px] mx-2">
+      <section className="overflow-x-auto sm:overflow-hidden">
         <table className="border border-black w-full">
           <caption className="font-bold text-xl py-2 text-left sm:text-center">
             Vendor List
