@@ -5,8 +5,8 @@ function Edit() {
   const location = useLocation();
   const navigate = useNavigate();
   const id = location.state.id;
+  const bankaccnoedit = location.state.bankaccno
   const [vendorname, setVendorname] = useState("");
-  const [bankaccno, setBankaccno] = useState("");
   const [bankname, setBankname] = useState("");
   const [address1, setAddress1] = useState("");
   const [address2, setAddress2] = useState("");
@@ -25,7 +25,7 @@ function Edit() {
           },
           body: JSON.stringify({
             vendorname,
-            bankaccno,
+            bankaccnoedit,
             bankname,
             address1,
             address2,
@@ -41,7 +41,6 @@ function Edit() {
       if (result.message === "Vendor edited") {
         alert(result.message);
         setVendorname("");
-        setBankaccno("");
         setBankname("");
         setAddress1("");
         setAddress2("");
@@ -51,10 +50,9 @@ function Edit() {
         setTimeout(() => {
           navigate("/list");
         }, 2000);
-      } else if (result.message === "Vendor already exists!") {
+      } else if (result.message === "Vendor not exists!") {
         alert(result.message);
         setVendorname("");
-        setBankaccno("");
         setBankname("");
         setAddress1("");
         setAddress2("");
@@ -62,7 +60,7 @@ function Edit() {
         setCountry("");
         setZipcode("");
       } else if ((result.message = "Wrong Id used for edit")) {
-        alert("Error occured");
+        alert("Wrong Id used for edit");
         setTimeout(() => {
           navigate("/list");
         }, 2000);
@@ -75,7 +73,7 @@ function Edit() {
   return (
     <main>
       <section className="flex flex-col w-full min-w-[350px] h-auto items-center p-4 gap-2">
-        <h1 className="font-medium underline">Create Vendor</h1>
+        <h1 className="font-medium underline">Edit Vendor</h1>
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
           <label htmlFor="vendorName">Vendor Name :</label>
           <input
@@ -95,12 +93,9 @@ function Edit() {
             type="text"
             name="bankaccountNo"
             placeholder="Bank Account No..."
-            className="border border-gray-500 p-1 rounded-md"
-            required
-            value={bankaccno}
-            onChange={(e) => {
-              setBankaccno(e.target.value);
-            }}
+            className="border border-gray-500 p-1 rounded-md font-medium"
+            readOnly
+            value={bankaccnoedit}
           />
 
           <label htmlFor="bankName">Bank Name :</label>

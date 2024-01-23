@@ -72,8 +72,8 @@ function List() {
   };
 
   //edit data
-  const handleEdit = (id) => {
-      navigate("/edit", { state: { id } });
+  const handleEdit = (id, bankaccno) => {
+      navigate("/edit", { state: { id, bankaccno } });
   };
 
   return (
@@ -127,7 +127,7 @@ function List() {
                 {/* edit */}
                 <td className="border border-black p-1" align="center">
                   <button
-                    onClick={() => handleEdit(item._id)}
+                    onClick={() => handleEdit(item._id, item.bankaccno)}
                     className="bg-yellow-200 p-2 rounded-full"
                   >
                     Edit
