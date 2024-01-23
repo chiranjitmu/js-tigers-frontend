@@ -34,7 +34,7 @@ function List() {
   }, [currentPage]);
 
   // pagination
-  const totalPages = Math.ceil(data.length / pageSize);
+  const totalPages = Math.ceil(data.length / pageSize) || 1;
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
